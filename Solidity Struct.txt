@@ -1,0 +1,40 @@
+//SPDX-License-Identifier: no-License
+pragma solidity ^0.8.12;
+
+contract donation{
+
+    struct _book_data{
+        uint256 _id;
+        string _name;
+        string _authurName;
+        uint256 _edition;
+        uint256 _supply;
+        bool _status;
+    }
+
+    mapping(uint=>_book_data)public _Library;
+    //_book_data newBook;
+
+    function viewBook(uint _number) external view returns(_book_data memory){
+        return _Library[_number];
+    }
+
+    function addnewBook() external {
+        // newBook._id=35;
+        // newBook._name="khubaib";
+        // newBook._authurName="AbuBakar";
+        // newBook._edition=5;
+        // newBook._supply=1000;
+        // newBook._status=true;
+        bookCount++;
+        _Library[bookCount]=_book_data({
+            _id=35;
+            _name="khubaib";
+            _authurName="AbuBakar";
+            _edition=5;
+            _supply=1000;
+            _status=true;
+
+        });
+    }
+}
